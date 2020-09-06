@@ -1,0 +1,113 @@
+<!-- Alright so, we're gonna need to create one single column
+and then copy and paste it twice. So I hope this wouldn't
+take a huge amount of time.
+So we'll start with emmet shortcut by hitting exclamation
+mark then click tab and it gives us this html boilerplate.
+Really handy tool. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- So let's link our css file. -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- And We're gonna be using materialize icons so I'm just
+  gonna get the link from materialize website. So let's get into
+  the official website -->
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Set the title -->
+
+  <title>Services Section</title>
+
+</head>
+<body>
+
+<!-- Alright now thre first thing would be a global container
+holding all the content so it's quite similar to the body
+So I'm gonna create a div with a class of services -->
+
+  <div class="services">
+
+    <!-- Which will first include a heading   -->
+
+    <h2>Our services</h2>
+
+    <!-- ANd now we'll get into the row container -->
+
+    <div class="row">
+
+      <!-- So as I said we're gonna have 3 columns -->
+
+      <div class="column">
+
+        <!-- then we need to reseve a place for the icon  -->
+
+        <div class="icon">
+
+          <!-- and now let's grab the icon  -->
+
+          <i class="large material-icons">ac_unit</i>
+        </div>
+
+        <!-- Ok. No we need to set the Service's names with another
+             smaller heading -->
+
+        <h3>Service Name</h3>
+
+        <!-- and now we'll put some dummy text in a paragraph tag  -->
+        <!-- so let's say lorem15 -->
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint quam recusandae reiciendis blanditiis, molestiae eligendi.</p>
+
+        <!-- Ok. and finally the last element which's the button.
+        So this guy will also need to be held in a div -->
+
+        <div class="button-container">
+
+          <!-- Now I'm gonna give this button a class of more
+          related to its name ok.  -->
+
+          <button class="more">Learn more</button>
+        </div>
+      </div>
+
+      <!-- Ok that's it now we just need to copy an paste it twice
+      and we should change the icons texts to the following:
+      the second one would be  "card_travel" and the other one
+      is "flight_land" and that's all the markup we need. ok  -->
+
+      <!-- So let's jump into css -->
+
+      <div class="column">
+        <div class="icon">
+          <i class="large material-icons">card_travel</i>
+        </div>
+        <h3>Service Name</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sint maxime, consectetur voluptatem sit illum.</p>
+        <div class="button-container">
+          <button class="more">Learn more</button>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="icon">
+          <i class="large material-icons">flight_land</i>
+        </div>
+        <h3>Service Name</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, harum, maiores! Officiis excepturi earum, voluptate.</p>
+        <div class="button-container">
+          <button class="more">Learn more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

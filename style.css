@@ -1,0 +1,329 @@
+/* Ok so in css I'm gonna use something
+called css variables it's not a complex
+concept but it's better than using
+hexadecimal notation for colors
+if you want to memorize the colors
+you're using cause I believe memorizing
+words is easier than memorizing numbers imo.
+So the way we declare a variable
+is by using a css selector that defines
+its scope. So if we want to use it
+globally in the whole body
+we should use the :root or the body selector.
+So let me show how to do that: */
+
+:root {
+
+  /* to set the variable name we need to type
+  a couple of dashes and then the name
+  you want to assign to it. in our case
+  I'm wanna call it myBlue and then give it
+  the hexadecimal notation or rgba if you want */
+
+  --myBlue: #4793d4;
+
+  /* But keep in mind that this is case-sensitive */
+  /* ALright */
+
+}
+
+/* Alright so the next thing would be
+the universal selector which's a type selector
+that matches any html tag whether it is
+a block element or inline element and
+I'm gonna give it some custom properties  */
+
+* {
+  /* the first thing would be the box-sizing
+  So this one allows us to decide whether
+  we want to include the border and the
+  padding in the element's total width
+  and height or not. We are going to
+  include it so we'll set it to border-box */
+
+  box-sizing: border-box;
+
+  /* Btw the box-sizing property is used by
+  most of developers cause it's an intuitive
+  way to make things clearer.   */
+
+  /* Ok now we just need to set the margin and
+  padding to 0 */
+  margin: 0;
+  padding: 0;
+
+  /* Annd that's it for the aesterisk selector */
+}
+
+
+/* Time to hit the body */
+
+body {
+  font-family: Helvetica, Arial;
+  color: #333;
+  background: #ddd;
+
+  /* We need to get rid of the horizontal
+  scroll-bar and this can be done by setting */
+  overflow-x: hidden;
+}
+
+.services {
+
+  /* I want to center-align all the texts
+  inside this div */
+
+  text-align: center;
+
+  /* and we'll set the margin top and bottom
+  to 2em and auto for both right and left
+  sides to center the content */
+
+  margin: 2em auto;
+}
+
+/* Alllright, now we should tackle the row
+container. I'm gonna using css flexbox  */
+
+.row {
+  display: flex;
+  margin: 2em auto;
+}
+
+/* So inside this row we're gonna give the
+columns a 25% of width each  */
+
+.row .column {
+  flex: 25%;
+  padding: 1em;
+
+  /* Okay so we have 3 columns. as I said each
+  one will take 25% of the row
+  so the three columns combined take 75%
+  and to make them centered we should have a
+  margin of 4.16% for left and right sides */
+
+  margin: auto 4.16%;
+
+  /* Every column has margin left an right
+  times 3 gives us 6 and remember that we have
+  25% of space in the row. if we divide it by
+  6 it gives us an approximate value of 4.16%
+  for each side. Ok some bad calculus though */
+
+  background: #eee; /* light white*/
+  border: 1px solid #bbb;
+
+  /* We'll have round corners */
+
+  border-radius: 10px;
+
+  /* We're gonna have a transition for the hover
+  effect */
+
+  transition: 0.3s ease-in-out;
+}
+
+.column:hover {
+
+  /* we're gonna have some box-shadow which
+  just like it sounds it makes a shadow
+  around the box-border.
+  I personally I don't mess with this property
+  in most cases cause whenever I want to use it
+  there's a website called cssmatic that has
+  super cool stuff that help you to find the
+  exact effect you're looking for. not too many
+  but still has great features. You can check it out. */
+
+  /* okay let's try to achieve a light shadow that
+  takes the top, right and left side okay */
+
+  box-shadow: -1px -6px 36px -3px rgba(128,128,128,1);
+
+  /* then we're going to have a rotation for
+  the column and we'll do that around the X axis */
+
+  transform: rotateX(10deg);
+}
+
+/* Ok. Right now we should take the icons  */
+
+.services i {
+  color: var(--myBlue);
+  transition: 0.3s ease-in-out;
+}
+
+.column:hover i {
+
+  /* Just like we did with the column we're going to
+  rotate the icon around the X axis but this time
+  we wanna do it backwards. */
+
+  transform: rotateX(-30deg);
+
+  /* Now since icon tags are just like texts
+  we can play with their font-size  */
+
+  font-size: 30px;
+}
+
+.column h3 {
+  margin: 1em auto;
+  text-align: left;
+}
+
+.column .large {
+  font-size: 40px;
+}
+
+.column p {
+  text-align: left;
+  font-size: 20px;
+  line-height: 30px;
+  width: 90%;
+}
+
+.more {
+  color: var(--myBlue);
+  border: none;
+  margin: 1em auto 0;
+  float: left;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.more:hover {
+  /* I want this button to be translated a little bit
+  to the right whenever I hover on */
+  /* Again we'll do the through the X axis */
+
+  transform: translateX(20px);
+}
+
+/* ALright that's it for desktop view */
+/* Annd now we should make some adjustments
+for the tablet and mobile view */
+
+
+/* I'm gonna set some common styles to both mobile
+and tablet so we'll do that by saying  */
+
+@media screen and (max-width: 768px) {
+
+  /* Now  the first thing I'm gonna do is to change
+  the row display. We're not gonna use flexbox
+  we'll kinda use the old way. So let's go ahead
+  and sort things out  */
+
+  .row {
+    display: block;
+  }
+
+  .row .column {
+
+    /* the column will take 80% of the whole width
+    and this way every column sits on top of the other  */
+
+    width: 80%;
+
+    /* Annd to center them we should set:  */
+
+    margin-left: 10%;
+
+    /* Also we need some space in the bottom  */
+
+    margin-bottom: 1.5em;
+  }
+
+  .column p {
+
+    /* We'll have a smaller font  */
+    font-size: 18px;
+
+    /* and again we need a bit of margin on
+    the bottom */
+
+    margin-bottom: 1em;
+  }
+
+  .more {
+
+    /* Now we're gonna simply set the margin to auto
+    so we can get this result which joins the button
+    to his neighbors. */
+
+    margin: auto;
+  }
+
+  /* And actually we need to have a bit of space in the
+  bottom of the button */
+
+  .button-container {
+    margin-bottom: 1.5em;
+  }
+
+}
+
+/* Alright looks cool in the mobile view.
+What about the tablet. So if we have a bigger
+screen size I don't think this would make
+sense. It's getting too much wider which makes it
+ugly imo. */
+
+/* So let's add another media query to fix that
+tablet view */
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+
+  /* So I'm gonna set the column width to 40%
+  a bit wider than the desktop width. Much
+  tighter than the mobile view.  */
+
+  .row .column {
+    width: 40%;
+
+    /* to put these columns in the same viewport
+    we need to float them to the left
+    so each column gets pushed to the left until
+    they exceed the maximum of the width which's 100%.
+    In this case it jumps to the next line. */
+
+    float: left;
+
+    /* since we set the column width to 40% this means
+    that we can't have more than 2 columns in the same
+    line. And we shouldn't also have this clutter.
+    So to center this w just need to add some margin to
+    the left so we'll have 4 times 5% which gives a clean
+    outcome */
+
+    margin-left: 5%;
+  }
+
+  /* Alright it's getting better now we can leave
+  it this way but we can still improve it.
+  Actually I want to have everything centered
+  And that's why I'm gonna atke the last column
+  and give a bigger value of margin to push it
+  to center of the container */
+
+  .row .column:nth-child(3) {
+
+    /* Or you can add another class or maybe an ID
+    if you want but I just want to clean up the
+    markup as much as I can.  */
+
+    margin-left: 30% ;
+  }
+
+  /* Annd this is the whole thing we now have achieved
+  a section with these effects some repsonsive layout
+  and that's it. */
+
+  /* Hope you liked it feel free to use it in your projects
+  Thanks for watching and see later */
+
+}

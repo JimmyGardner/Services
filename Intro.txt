@@ -1,0 +1,8 @@
+Hey what's going on guys. Today we're going to create a services 
+section using html and css. Thought this can be useful for some 
+projects you can improve your UI with this thing so it's basically 
+a row container holding 3 columns. We're gonna use flexbox and 
+some other cool css stuff to animate the columns and this button. 
+You can see that whenever you hover it kinda have a little bit of 
+rotation. and this is just a box-shadow. Alright that's it and let's get 
+started.
